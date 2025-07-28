@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 if not SECRET_KEY:
-    raise RuntimeError("The environment variable SECRET_KEY is not set!")
+    raise Exception("The environment variable SECRET_KEY is not set!")
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",") if not DEBUG else []
 
